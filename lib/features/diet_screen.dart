@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class PerformancePage extends StatelessWidget {
-  const PerformancePage({super.key});
+class DietScreen extends StatelessWidget {
+  const DietScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
