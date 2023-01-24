@@ -1,49 +1,58 @@
 import 'package:fitness_app/app/ui_kit/app_bottom_navigation_bar.dart';
+import 'package:fitness_app/app/ui_kit/components/app_text_field.dart';
+import 'package:fitness_app/app/ui_kit/components/buttons/app_buttons.dart';
+import 'package:fitness_app/app/ui_kit/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({
-    super.key,
-  });
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class ExerciseScreen extends StatelessWidget {
+  const ExerciseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GYM'),
+      bottomNavigationBar: const AppBottomNavigationBar(),
+      appBar: const CustomAppBar(
+        title: 'Exercises',
       ),
-      bottomNavigationBar: AppBottomNavigationBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  const SizedBox(height: 100),
+                  AppButton.primary(
+                    context: context,
+                    label: 'Primary',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 100),
+                  AppButton.secondary(
+                    context: context,
+                    label: 'secondary',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 100),
+                  AppButton.outlined(
+                    context: context,
+                    label: 'Outlined',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: 100),
+                  AppTextField(
+                    labelText: 'AAA',
+                  ),
+                  const SizedBox(height: 100),
+                  // ElevatedButton(
+                  //   onPressed: () {},
+                  //   child: const Text('ss'),
+                  // ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }

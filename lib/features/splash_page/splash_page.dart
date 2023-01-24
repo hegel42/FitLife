@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const MainPage(),
+          builder: (context) => const ExerciseScreen(),
         ),
       ),
     );
@@ -32,7 +32,6 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Scaffold(
         body: Container(
           color: Colors.red,
-          width: 100,
         ),
       ),
     );
