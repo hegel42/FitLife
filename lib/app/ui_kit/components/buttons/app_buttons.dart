@@ -2,7 +2,6 @@ import 'package:fitness_app/app/ui_kit/models/app_fonts.dart';
 import 'package:fitness_app/app/ui_kit/models/color_palette.dart';
 import 'package:flutter/material.dart';
 
-const _kDefaultPrimaryBorderRadius = 24.0;
 const _kDefaultSecondaryBorderRadius = 16.0;
 
 class AppButton extends StatelessWidget {
@@ -83,7 +82,7 @@ class AppButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius ?? 8),
         ),
       ).copyWith(
-          // TODO splashColor?
+
           // shadowColor: overlayColor ??
           //     MaterialStateProperty.all<Color>(
           //       theme.themeMode.colors.primary.withOpacity(_kDefaultOpacity),

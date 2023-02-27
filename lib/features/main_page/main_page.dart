@@ -1,7 +1,6 @@
 import 'package:fitness_app/app/ui_kit/app_bottom_navigation_bar.dart';
-import 'package:fitness_app/app/ui_kit/components/app_text_field.dart';
-import 'package:fitness_app/app/ui_kit/components/buttons/app_buttons.dart';
 import 'package:fitness_app/app/ui_kit/components/custom_app_bar.dart';
+
 import 'package:flutter/material.dart';
 
 class ExerciseScreen extends StatelessWidget {
@@ -21,33 +20,30 @@ class ExerciseScreen extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  const SizedBox(height: 100),
-                  AppButton.primary(
-                    context: context,
-                    label: 'Primary',
-                    onPressed: () {},
+                  OrientationBuilder(
+                    builder: (context, orientation) {
+                      return orientation == Orientation.portrait
+                          ? Container(
+                              height: 100,
+                              color: Colors.green,
+                              child: const Text('portrait'),
+                            )
+                          : Container(
+                              height: 100,
+                              color: Colors.red,
+                              child: const Text('landscape'),
+                            );
+                    },
                   ),
-                  const SizedBox(height: 100),
-                  AppButton.secondary(
-                    context: context,
-                    label: 'secondary',
-                    onPressed: () {},
+                  InteractiveViewer(
+                    boundaryMargin: const EdgeInsets.all(40.0),
+                    minScale: 0.1,
+                    maxScale: 1.6,
+                    child: Image.network(
+                      'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif',
+                      scale: 0.5,
+                    ),
                   ),
-                  const SizedBox(height: 100),
-                  AppButton.outlined(
-                    context: context,
-                    label: 'Outlined',
-                    onPressed: () {},
-                  ),
-                  const SizedBox(height: 100),
-                  AppTextField(
-                    labelText: 'AAA',
-                  ),
-                  const SizedBox(height: 100),
-                  // ElevatedButton(
-                  //   onPressed: () {},
-                  //   child: const Text('ss'),
-                  // ),
                 ],
               ),
             ),

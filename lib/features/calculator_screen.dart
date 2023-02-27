@@ -6,7 +6,7 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       bottomNavigationBar: AppBottomNavigationBar(),
       body: Center(
         child: Text('Notifications'),
