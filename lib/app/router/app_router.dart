@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:fitness_app/features/calculator_page.dart';
-import 'package:fitness_app/features/diet_page.dart';
+import 'package:fitness_app/features/calculator_page/ui/calculator_page.dart';
+import 'package:fitness_app/features/diet_page/ui/diet_page.dart';
 
-import 'package:fitness_app/features/exercise_page/exercise_page.dart';
+import 'package:fitness_app/features/exercise_page/ui/exercise_page.dart';
 import 'package:fitness_app/features/home_page/home_page.dart';
-import 'package:fitness_app/features/profile_screen.dart';
+import 'package:fitness_app/features/profile_page/ui/profile_page.dart';
 import 'package:fitness_app/features/splash_page/splash_page.dart';
 import 'package:flutter/material.dart';
 
