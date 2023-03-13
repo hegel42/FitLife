@@ -7,7 +7,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      bottomNavigationBar: AppBottomNavigationBar(),
       body: Center(
         child: Text('ProfilePage'),
       ),

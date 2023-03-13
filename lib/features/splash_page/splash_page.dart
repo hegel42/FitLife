@@ -1,29 +1,24 @@
 import 'dart:async';
 
-import 'package:fitness_app/features/main_page/main_page.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:fitness_app/app/router/app_router.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-
-    Timer(
-      const Duration(seconds: 3),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const ExerciseScreen(),
-        ),
-      ),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Future.delayed(const Duration(seconds: 3))
+          .then((value) => context.router.navigate(const HomeRoute()));
+    });
   }
 
   @override

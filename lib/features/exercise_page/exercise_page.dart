@@ -3,13 +3,12 @@ import 'package:fitness_app/app/ui_kit/components/custom_app_bar.dart';
 
 import 'package:flutter/material.dart';
 
-class ExerciseScreen extends StatelessWidget {
-  const ExerciseScreen({super.key});
+class ExercisePage extends StatelessWidget {
+  const ExercisePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const AppBottomNavigationBar(),
       appBar: const CustomAppBar(
         title: 'Exercises',
       ),
@@ -20,21 +19,6 @@ class ExerciseScreen extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  OrientationBuilder(
-                    builder: (context, orientation) {
-                      return orientation == Orientation.portrait
-                          ? Container(
-                              height: 100,
-                              color: Colors.green,
-                              child: const Text('portrait'),
-                            )
-                          : Container(
-                              height: 100,
-                              color: Colors.red,
-                              child: const Text('landscape'),
-                            );
-                    },
-                  ),
                   InteractiveViewer(
                     boundaryMargin: const EdgeInsets.all(40.0),
                     minScale: 0.1,
