@@ -1,3 +1,4 @@
+import 'package:fitness_app/app/runner/init_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:fitness_app/app/router/app_router.dart';
@@ -10,18 +11,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Fitness App',
-      theme: ThemeData(
-        scaffoldBackgroundColor: ColorPallete.backGround,
-        bottomAppBarColor: ColorPallete.silver,
-        appBarTheme: AppBarTheme(
-          backgroundColor: ColorPallete.primary,
+    return InitWidget(
+      child: MaterialApp.router(
+        title: 'Fitness App',
+        theme: ThemeData(
+          scaffoldBackgroundColor: ColorPallete.backGround,
+          bottomAppBarColor: ColorPallete.silver,
+          appBarTheme: AppBarTheme(
+            backgroundColor: ColorPallete.primary,
+          ),
         ),
+        debugShowCheckedModeBanner: false,
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
-      debugShowCheckedModeBanner: false,
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }
