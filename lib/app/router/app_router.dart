@@ -17,12 +17,16 @@ part 'app_router.gr.dart';
       page: SplashPage,
       initial: true,
     ),
-    AutoRoute(page: HomePage, initial: true, children: [
-      AutoRoute(page: ExercisePage),
-      AutoRoute(page: CalculatorPage),
-      AutoRoute(page: DietPage),
-      AutoRoute(page: ProfilePage),
-    ]),
+    AutoRoute(
+      page: HomePage,
+      initial: true,
+      children: [
+        AutoRoute(page: ExercisePage),
+        AutoRoute(page: CalculatorPage),
+        AutoRoute(page: DietPage),
+        AutoRoute(page: ProfilePage),
+      ],
+    ),
   ],
 )
 // extend the generated private router

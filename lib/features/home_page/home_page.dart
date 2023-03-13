@@ -2,8 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:fitness_app/app/router/app_router.dart';
 import 'package:fitness_app/app/ui_kit/models/color_palette.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,24 +30,33 @@ class HomePage extends StatelessWidget {
               splashFactory: NoSplash.splashFactory,
             ),
             child: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                showSelectedLabels: true,
-                enableFeedback: true,
-                elevation: 10,
-                currentIndex: tabsRouter.activeIndex,
-                onTap: (value) => tabsRouter.setActiveIndex(value),
-                selectedItemColor: ColorPallete.accent,
-                unselectedItemColor: ColorPallete.primary,
-                items: const [
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.sports_gymnastics), label: 'Exercise'),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.food_bank), label: 'Diet'),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.calculate), label: 'Calculator'),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.person_off_outlined), label: 'Profile'),
-                ]),
+              type: BottomNavigationBarType.fixed,
+              showSelectedLabels: true,
+              enableFeedback: true,
+              elevation: 10,
+              currentIndex: tabsRouter.activeIndex,
+              onTap: (value) => tabsRouter.setActiveIndex(value),
+              selectedItemColor: ColorPallete.accent,
+              unselectedItemColor: ColorPallete.primary,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.sports_gymnastics),
+                  label: 'Exercise',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.food_bank),
+                  label: 'Diet',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.calculate),
+                  label: 'Calculator',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_off_outlined),
+                  label: 'Profile',
+                ),
+              ],
+            ),
           ),
         );
       },
