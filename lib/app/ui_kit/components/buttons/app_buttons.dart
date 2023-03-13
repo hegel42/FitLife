@@ -23,7 +23,6 @@ class AppButton extends StatelessWidget {
   // final double? borderRadius;
 
   factory AppButton.primary({
-    required BuildContext context,
     required String label,
     required VoidCallback onPressed,
     Color? backgroundColor,
@@ -54,7 +53,6 @@ class AppButton extends StatelessWidget {
   }
 
   factory AppButton.secondary({
-    required BuildContext context,
     required String label,
     required VoidCallback onPressed,
     Widget? icon,
@@ -62,7 +60,6 @@ class AppButton extends StatelessWidget {
     Color? foregroundColor,
     double? borderRadius,
     EdgeInsetsGeometry? padding,
-    MaterialStateProperty<Color>? overlayColor,
   }) {
     return AppButton(
       icon: icon,
@@ -96,7 +93,6 @@ class AppButton extends StatelessWidget {
   }
 
   factory AppButton.outlined({
-    required BuildContext context,
     required String label,
     required VoidCallback onPressed,
     Widget? icon,
