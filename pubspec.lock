@@ -190,6 +190,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.4"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.2"
   equatable:
     dependency: "direct main"
     description:
@@ -271,7 +278,7 @@ packages:
     source: hosted
     version: "3.2.0"
   get_it:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: get_it
       url: "https://pub.dartlang.org"
@@ -326,13 +333,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.15.8"
   io:
     dependency: transitive
     description:
@@ -466,13 +466,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  path_provider:
-    dependency: transitive
-    description:
-      name: path_provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1"
   petitparser:
     dependency: transitive
     description:
@@ -501,6 +494,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.1"
+  pretty_dio_logger:
+    dependency: "direct main"
+    description:
+      name: pretty_dio_logger
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.1"
   process:
     dependency: transitive
     description:
@@ -543,13 +543,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.0"
-  rxdart:
-    dependency: transitive
-    description:
-      name: rxdart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.22.6"
   shelf:
     dependency: transitive
     description:
@@ -639,33 +632,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  todos_app_core:
-    dependency: "direct overridden"
-    description:
-      path: todos_app_core
-      ref: expose-repositories
-      resolved-ref: "08da0c362ff3b46bc5cdc26e43fcde4d3895e72a"
-      url: "https://github.com/felangel/flutter_architecture_samples"
-    source: git
-    version: "0.0.0"
-  todos_repository_core:
-    dependency: "direct overridden"
-    description:
-      path: todos_repository_core
-      ref: expose-repositories
-      resolved-ref: "08da0c362ff3b46bc5cdc26e43fcde4d3895e72a"
-      url: "https://github.com/felangel/flutter_architecture_samples"
-    source: git
-    version: "0.0.0"
-  todos_repository_simple:
-    dependency: "direct overridden"
-    description:
-      path: todos_repository_simple
-      ref: expose-repositories
-      resolved-ref: "08da0c362ff3b46bc5cdc26e43fcde4d3895e72a"
-      url: "https://github.com/felangel/flutter_architecture_samples"
-    source: git
-    version: "0.0.0"
   typed_data:
     dependency: transitive
     description:
