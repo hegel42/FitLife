@@ -11,20 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InitWidget(
-      child: MaterialApp.router(
-        title: 'Fitness App',
-        theme: ThemeData(
-          scaffoldBackgroundColor: ColorPallete.backGround,
-          bottomAppBarColor: ColorPallete.silver,
-          appBarTheme: AppBarTheme(
-            backgroundColor: ColorPallete.primary,
-          ),
+    return MaterialApp.router(
+      title: 'Fitness App',
+      theme: ThemeData(
+        scaffoldBackgroundColor: ColorPallete.backGround,
+        bottomAppBarColor: ColorPallete.silver,
+        appBarTheme: AppBarTheme(
+          backgroundColor: ColorPallete.primary,
         ),
-        debugShowCheckedModeBanner: false,
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
+      debugShowCheckedModeBanner: false,
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

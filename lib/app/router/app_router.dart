@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fitness_app/features/calculator_page/ui/calculator_page.dart';
 import 'package:fitness_app/features/diet_page/ui/diet_page.dart';
+import 'package:fitness_app/features/everyday_photo_page/presentation/ui/everyday_photo_page.dart';
 
-import 'package:fitness_app/features/exercise_page/ui/exercise_page.dart';
 import 'package:fitness_app/features/home_page/home_page.dart';
 import 'package:fitness_app/features/profile_page/ui/profile_page.dart';
 import 'package:fitness_app/features/splash_page/splash_page.dart';
@@ -15,16 +15,32 @@ part 'app_router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(
       page: SplashPage,
-      initial: true,
+      // initial: true,
     ),
     AutoRoute(
       page: HomePage,
       initial: true,
       children: [
-        AutoRoute(page: ExercisePage),
-        AutoRoute(page: CalculatorPage),
-        AutoRoute(page: DietPage),
-        AutoRoute(page: ProfilePage),
+        AutoRoute(
+          page: EverydayPhotoPage,
+          // initial: true,
+        ),
+        // AutoRoute(
+        //   page: ExercisePage,
+        //   // initial: true,
+        // ),
+        AutoRoute(
+          page: CalculatorPage,
+          // initial: true,
+        ),
+        AutoRoute(
+          page: DietPage,
+          // initial: true,
+        ),
+        AutoRoute(
+          page: ProfilePage,
+          // initial: true,
+        ),
       ],
     ),
   ],
