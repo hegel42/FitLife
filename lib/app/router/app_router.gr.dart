@@ -29,10 +29,10 @@ class _$AppRouter extends RootStackRouter {
         child: const HomePage(),
       );
     },
-    ExerciseRoute.name: (routeData) {
+    EverydayPictureRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const ExercisePage(),
+        child: const EverydayPicturePage(),
       );
     },
     CalculatorRoute.name: (routeData) {
@@ -59,15 +59,15 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(
           SplashRoute.name,
-          path: '/',
+          path: '/splash-page',
         ),
         RouteConfig(
           HomeRoute.name,
           path: '/',
           children: [
             RouteConfig(
-              ExerciseRoute.name,
-              path: 'exercise-page',
+              EverydayPictureRoute.name,
+              path: 'everyday-picture-page',
               parent: HomeRoute.name,
             ),
             RouteConfig(
@@ -96,7 +96,7 @@ class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute()
       : super(
           SplashRoute.name,
-          path: '/',
+          path: '/splash-page',
         );
 
   static const String name = 'SplashRoute';
@@ -116,15 +116,15 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ExercisePage]
-class ExerciseRoute extends PageRouteInfo<void> {
-  const ExerciseRoute()
+/// [EverydayPicturePage]
+class EverydayPictureRoute extends PageRouteInfo<void> {
+  const EverydayPictureRoute()
       : super(
-          ExerciseRoute.name,
-          path: 'exercise-page',
+          EverydayPictureRoute.name,
+          path: 'everyday-picture-page',
         );
 
-  static const String name = 'ExerciseRoute';
+  static const String name = 'EverydayPictureRoute';
 }
 
 /// generated route for

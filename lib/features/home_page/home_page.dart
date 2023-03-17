@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsRouter(
       routes: const [
-        ExerciseRoute(),
+        EverydayPictureRoute(),
         CalculatorRoute(),
         DietRoute(),
         ProfileRoute(),
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.sports_gymnastics),
-                  label: 'Exercise',
+                  label: 'Main',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.food_bank),

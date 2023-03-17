@@ -1,3 +1,4 @@
+import 'package:fitness_app/app/ui_kit/models/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -38,7 +39,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: backgroundColor,
+      //  automaticallyImplyLeading: false,
+      backgroundColor: backgroundColor ?? ColorPallete.primary,
       centerTitle: centerTitle ?? false,
       actions: actions,
       elevation: elevation,
