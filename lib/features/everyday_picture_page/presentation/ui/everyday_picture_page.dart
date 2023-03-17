@@ -22,15 +22,15 @@ class EverydayPicturePage extends StatelessWidget {
             ),
             success: (value) => CustomScrollView(
               slivers: [
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: SizedBox(
                     height: 8,
                   ),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Text('Astronomical picure of the day'),
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: SizedBox(
                     height: 8,
                   ),
