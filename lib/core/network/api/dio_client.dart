@@ -1,108 +1,42 @@
 import 'package:dio/dio.dart';
 import 'package:fitness_app/core/network/api/constants.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClient {
-  final Dio _dio;
+  final options = BaseOptions(
+    baseUrl: Endpoints.baseUrl,
+    connectTimeout: Endpoints.connectionTimeout,
+    receiveTimeout: Endpoints.receiveTimeout,
+    queryParameters: {'api_key': ApiKey.apiKey},
+  );
 
-  DioClient(this._dio) {
-    _dio
-      ..options.baseUrl = Endpoints.baseUrl
-      ..options.connectTimeout = Endpoints.connectionTimeout
-      ..options.receiveTimeout = Endpoints.receiveTimeout
-      ..options.responseType = ResponseType.json;
+  late final dio = Dio(options)
+    ..interceptors.addAll([
+      _BasicInterceptor(),
+      PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        compact: false,
+      )
+    ]);
+}
+
+class _BasicInterceptor implements Interceptor {
+  @override
+  void onError(
+    DioError error,
+    ErrorInterceptorHandler handler,
+  ) {
+    handler.next(error);
   }
 
-  Future<Response> get(
-    String url, {
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    try {
-      final Response response = await _dio.get(
-        url,
-        queryParameters: queryParameters,
-        options: options,
-        cancelToken: cancelToken,
-        onReceiveProgress: onReceiveProgress,
-      );
-
-      return response;
-    } catch (e) {
-      rethrow;
-    }
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    handler.next(options);
   }
 
-  Future<Response> post(
-    String url, {
-    dynamic data,
-    Options? options,
-    Map<String, dynamic>? queryParametrs,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    try {
-      final Response response = await _dio.post(
-        url,
-        data: data,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress,
-      );
-
-      return response;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<Response> put(
-    String url, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    try {
-      final Response response = await _dio.put(
-        url,
-        data: data,
-        queryParameters: queryParameters,
-        options: options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress,
-      );
-      return response;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<dynamic> delete(
-    String url, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    try {
-      final Response response = await _dio.delete(
-        url,
-        data: data,
-        queryParameters: queryParameters,
-        options: options,
-        cancelToken: cancelToken,
-      );
-      return response.data;
-    } catch (e) {
-      rethrow;
-    }
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    handler.next(response);
   }
 }

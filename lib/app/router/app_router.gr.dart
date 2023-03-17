@@ -29,10 +29,10 @@ class _$AppRouter extends RootStackRouter {
         child: const HomePage(),
       );
     },
-    EverydayPhotoRoute.name: (routeData) {
+    EverydayPictureRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const EverydayPhotoPage(),
+        child: const EverydayPicturePage(),
       );
     },
     CalculatorRoute.name: (routeData) {
@@ -66,8 +66,8 @@ class _$AppRouter extends RootStackRouter {
           path: '/',
           children: [
             RouteConfig(
-              EverydayPhotoRoute.name,
-              path: 'everyday-photo-page',
+              EverydayPictureRoute.name,
+              path: 'everyday-picture-page',
               parent: HomeRoute.name,
             ),
             RouteConfig(
@@ -116,15 +116,15 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [EverydayPhotoPage]
-class EverydayPhotoRoute extends PageRouteInfo<void> {
-  const EverydayPhotoRoute()
+/// [EverydayPicturePage]
+class EverydayPictureRoute extends PageRouteInfo<void> {
+  const EverydayPictureRoute()
       : super(
-          EverydayPhotoRoute.name,
-          path: 'everyday-photo-page',
+          EverydayPictureRoute.name,
+          path: 'everyday-picture-page',
         );
 
-  static const String name = 'EverydayPhotoRoute';
+  static const String name = 'EverydayPictureRoute';
 }
 
 /// generated route for

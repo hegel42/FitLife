@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fitness_app/features/calculator_page/ui/calculator_page.dart';
 import 'package:fitness_app/features/diet_page/ui/diet_page.dart';
-import 'package:fitness_app/features/everyday_photo_page/presentation/ui/everyday_photo_page.dart';
+import 'package:fitness_app/features/everyday_picture_page/presentation/ui/everyday_picture_page.dart';
 
 import 'package:fitness_app/features/home_page/home_page.dart';
 import 'package:fitness_app/features/profile_page/ui/profile_page.dart';
@@ -22,7 +22,7 @@ part 'app_router.gr.dart';
       initial: true,
       children: [
         AutoRoute(
-          page: EverydayPhotoPage,
+          page: EverydayPicturePage,
           // initial: true,
         ),
         // AutoRoute(

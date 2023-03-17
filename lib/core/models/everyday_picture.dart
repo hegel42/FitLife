@@ -1,63 +1,57 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
 
 class EverydayPicture {
   final String? copyright;
-
-  final String date;
-
-  final String explanation;
-
-  final String hdUrl;
-
-  final String title;
-
-  final String imageUrl;
+  final String? date;
+  final String? explanation;
+  final String? hdurl;
+  final String? mediaType;
+  final String? serviceVersion;
+  final String? title;
+  final String? url;
   const EverydayPicture({
     this.copyright,
-    required this.date,
-    required this.explanation,
-    required this.hdUrl,
-    required this.title,
-    required this.imageUrl,
+    this.date,
+    this.explanation,
+    this.hdurl,
+    this.mediaType,
+    this.serviceVersion,
+    this.title,
+    this.url,
   });
 
-  EverydayPicture copyWith({
-    String? copyright,
-    String? date,
-    String? explanation,
-    String? hdUrl,
-    String? title,
-    String? imageUrl,
-  }) {
-    return EverydayPicture(
-      copyright: copyright ?? this.copyright,
-      date: date ?? this.date,
-      explanation: explanation ?? this.explanation,
-      hdUrl: hdUrl ?? this.hdUrl,
-      title: title ?? this.title,
-      imageUrl: imageUrl ?? this.imageUrl,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'copyright': copyright,
       'date': date,
       'explanation': explanation,
-      'hdurl': hdUrl,
+      'hdurl': hdurl,
+      'mediaType': mediaType,
+      'serviceVersion': serviceVersion,
       'title': title,
-      'url': imageUrl,
+      'url': url,
     };
   }
 
-  factory EverydayPicture.fromJson(Map<String, dynamic> json) {
+  factory EverydayPicture.fromMap(Map<String, dynamic> map) {
     return EverydayPicture(
-      copyright: json['copyright'] != null ? json['copyright'] as String : null,
-      date: json['date'] as String,
-      explanation: json['explanation'] as String,
-      hdUrl: json['hdurl'] as String,
-      title: json['title'] as String,
-      imageUrl: json['url'] as String,
+      copyright: map['copyright'] != null ? map['copyright'] as String : null,
+      date: map['date'] != null ? map['date'] as String : null,
+      explanation:
+          map['explanation'] != null ? map['explanation'] as String : null,
+      hdurl: map['hdurl'] != null ? map['hdurl'] as String : null,
+      mediaType: map['mediaType'] != null ? map['mediaType'] as String : null,
+      serviceVersion: map['serviceVersion'] != null
+          ? map['serviceVersion'] as String
+          : null,
+      title: map['title'] != null ? map['title'] as String : null,
+      url: map['url'] != null ? map['url'] as String : null,
     );
   }
+
+  String toJson() => json.encode(toMap());
+
+  factory EverydayPicture.fromJson(String source) =>
+      EverydayPicture.fromMap(json.decode(source) as Map<String, dynamic>);
 }
