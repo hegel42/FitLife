@@ -1,6 +1,7 @@
 import 'package:fitness_app/app/ui_kit/components/custom_app_bar.dart';
 import 'package:fitness_app/features/everyday_picture_page/bloc/everyday_picture_bloc.dart';
 import 'package:fitness_app/features/everyday_picture_page/bloc/everyday_picture_state.dart';
+import 'package:fitness_app/features/everyday_picture_page/presentation/ui/components/apod_main_card.dart';
 
 import 'package:flutter/material.dart';
 
@@ -36,18 +37,13 @@ class EverydayPicturePage extends StatelessWidget {
                   ),
                 ),
                 SliverToBoxAdapter(
-                  child: Image.network(
-                    value.everydayPictureData.url ?? 'unknown',
+                  child: ApodMainCard(
+                    imageUrl: value.everydayPictureData.url ?? 'unknown',
+                    title: value.everydayPictureData.title ?? 'null',
+                    explanation: value.everydayPictureData.explanation ?? '',
+                    copyright: value.everydayPictureData.copyright,
+                    hdImage: value.everydayPictureData.hdurl ?? 'unknown',
                   ),
-                ),
-                SliverToBoxAdapter(
-                  child: Text(value.everydayPictureData.title ?? 'null'),
-                ),
-                SliverToBoxAdapter(
-                  child: Text(value.everydayPictureData.copyright ?? ''),
-                ),
-                SliverToBoxAdapter(
-                  child: Text(value.everydayPictureData.explanation ?? ''),
                 ),
               ],
             ),

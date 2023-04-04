@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
 
 class EverydayPicture {
   final String? copyright;
@@ -21,37 +20,32 @@ class EverydayPicture {
     this.url,
   });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'copyright': copyright,
-      'date': date,
-      'explanation': explanation,
-      'hdurl': hdurl,
-      'mediaType': mediaType,
-      'serviceVersion': serviceVersion,
-      'title': title,
-      'url': url,
-    };
-  }
+  // Map<String, dynamic> toMap() {
+  //   return <String, dynamic>{
+  //     'copyright': copyright,
+  //     'date': date,
+  //     'explanation': explanation,
+  //     'hdurl': hdurl,
+  //     'mediaType': mediaType,
+  //     'serviceVersion': serviceVersion,
+  //     'title': title,
+  //     'url': url,
+  //   };
+  // }
 
-  factory EverydayPicture.fromMap(Map<String, dynamic> map) {
-    return EverydayPicture(
-      copyright: map['copyright'] != null ? map['copyright'] as String : null,
-      date: map['date'] != null ? map['date'] as String : null,
-      explanation:
-          map['explanation'] != null ? map['explanation'] as String : null,
-      hdurl: map['hdurl'] != null ? map['hdurl'] as String : null,
-      mediaType: map['mediaType'] != null ? map['mediaType'] as String : null,
-      serviceVersion: map['serviceVersion'] != null
-          ? map['serviceVersion'] as String
-          : null,
-      title: map['title'] != null ? map['title'] as String : null,
-      url: map['url'] != null ? map['url'] as String : null,
-    );
-  }
+  factory EverydayPicture.fromMap(Map<String, dynamic> map) => EverydayPicture(
+        copyright: map['copyright'] as String?,
+        date: map['date'] as String?,
+        explanation: map['explanation'] as String?,
+        hdurl: map['hdurl'] as String?,
+        mediaType: map['mediaType'] as String?,
+        serviceVersion: map['serviceVersion'] as String?,
+        title: map['title'] as String?,
+        url: map['url'] as String?,
+      );
 
-  String toJson() => json.encode(toMap());
+  // String toJson() => json.encode(toMap());
 
-  factory EverydayPicture.fromJson(String source) =>
-      EverydayPicture.fromMap(json.decode(source) as Map<String, dynamic>);
+  // factory EverydayPicture.fromJson(String source) =>
+  //     EverydayPicture.fromMap(json.decode(source) as Map<String, dynamic>);
 }
