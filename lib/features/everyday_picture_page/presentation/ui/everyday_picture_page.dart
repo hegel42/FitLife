@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_app/app/ui_kit/components/custom_app_bar.dart';
-import 'package:fitness_app/core/models/everyday_picture.dart';
 import 'package:fitness_app/features/everyday_picture_page/bloc/everyday_picture_bloc.dart';
 import 'package:fitness_app/features/everyday_picture_page/bloc/everyday_picture_state.dart';
 import 'package:fitness_app/features/everyday_picture_page/presentation/ui/components/apod_main_card.dart';
