@@ -27,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
         home: AnimatedSplashScreen(
           backgroundColor: Colors.red,
           splash: Icons.code,
-          animationDuration: const Duration(seconds: 2),
+          animationDuration: const Duration(seconds: 1),
           splashTransition: SplashTransition.slideTransition,
           nextScreen: MaterialApp.router(
             routerDelegate: _appRouter.delegate(),
