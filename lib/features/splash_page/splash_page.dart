@@ -20,8 +20,8 @@ class _SplashPageState extends State<SplashPage> {
       child: MaterialApp(
         title: 'Fitness App',
         theme: ThemeData(
-          scaffoldBackgroundColor: ColorPallete.backGround,
-          bottomAppBarColor: ColorPallete.silver,
+          scaffoldBackgroundColor: ColorPallete.bgBlue1,
+          bottomAppBarColor: ColorPallete.darkBlue,
         ),
         debugShowCheckedModeBanner: false,
         home: AnimatedSplashScreen(
